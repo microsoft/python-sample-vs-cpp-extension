@@ -1,3 +1,6 @@
+# python-sample-vs-cpp-extension
+
+This sample is the end product for the walkthrough on https://docs.microsoft.com/en-us/visualstudio/python/working-with-c-cpp-python-in-visual-studio.
 
 # Contributing
 
