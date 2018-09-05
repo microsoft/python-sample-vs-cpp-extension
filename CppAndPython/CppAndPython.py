@@ -17,15 +17,6 @@ def tanh(x):
     tanh_x = sinh(x) / cosh(x)
     return tanh_x
 
-def sequence_tanh(data):
-    '''Applies the hyperbolic tangent function to map all values in
-    the sequence to a value between -1.0 and 1.0.
-    '''
-    result = []
-    for x in data:
-        result.append(tanh(x))
-    return result
-
 def test(fn, name):
     start = perf_counter()
     result = fn(DATA)
@@ -38,9 +29,10 @@ def test(fn, name):
 if __name__ == "__main__":
     print('Running benchmarks with COUNT = {}'.format(COUNT))
 
-    test(sequence_tanh, 'sequence_tanh')
-
-    test(lambda d: [tanh(x) for x in d], '[tanh(x) for x in d]')
-
+    test(lambda d: [tanh(x) for x in d], '[tanh(x) for x in d] (Python implementation)')
+    
     from superfastcode import fast_tanh
-    test(lambda d: [fast_tanh(x) for x in d], '[fast_tanh(x) for x in d]')
+    test(lambda d: [fast_tanh(x) for x in d], '[fast_tanh(x) for x in d] (CPython C++ extension)')
+
+    from superfastcode2 import fast_tanh2
+    test(lambda d: [fast_tanh2(x) for x in d], '[fast_tanh2(x) for x in d] (PyBind11 C++ extension)')

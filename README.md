@@ -1,11 +1,18 @@
 # python-sample-vs-cpp-extension
 
-This sample is the end product for the walkthrough on https://docs.microsoft.com/en-us/visualstudio/python/working-with-c-cpp-python-in-visual-studio. Note that you must
-have the "Python native development tools" option selected for the Python development workload in the Visual Studio 2017 installer.
+This sample is the end product for the walkthrough on https://docs.microsoft.com/en-us/visualstudio/python/working-with-c-cpp-python-in-visual-studio.
+You must have the "Python native development tools" option selected for the Python development workload in the Visual Studio 2017 installer.
 
-Because the "superfastcode" C++ project contains a few hard-coded pathnames and is also configured to compile using the Visual Studio 2017 toolset, you may need to
-change a few project properties to make it work on your computer. For the latter two you can just set the PYTHONPATH environment variable accordingly, which is the only change
-needed for Visual Studio 2017.
+The superfastcode and superfastcode2 projects contain identical implementations of a hyperbolic tangent function. In the superfastcode project, the
+module is exposed to Python using the extension methods for CPython. In the superfastcode2 project, the module is exposed using PyBind11.
+
+The CppAndPython project contains a little Python code that implements the same function using straight Python, then runs all three implementations
+to provide comparative results. Note that you may need to update the selected environment under the **Python Environments** node. The sample was
+written for Python 3.6 (32-bit). Make sure a suitable environment is selected here.
+
+Because the superfastcode and superfastcode2 C++ projects contain a few hard-coded pathnames and is also configured to compile using the Visual Studio 2017 
+toolset, you may need to change a few project properties as described in the table below to make them work on your computer. For the latter two properties,
+just set the PYTHONPATH environment variable accordingly, which is the only change needed for Visual Studio 2017.
 
 | Project Property | Value in the example | Notes |
 | --- | --- | --- |

@@ -27,6 +27,11 @@
     <Compile Include="CppAndPython.py" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\superfastcode2\superfastcode2.vcxproj">
+      <Name>superfastcode2</Name>
+      <Project>{98d5e983-ce8c-4ae5-9da2-0374c81bfb86}</Project>
+      <Private>True</Private>
+    </ProjectReference>
     <ProjectReference Include="..\superfastcode\superfastcode.vcxproj">
       <Name>superfastcode</Name>
       <Project>{28f6146f-9862-4c07-a931-f3de0a093bb7}</Project>
